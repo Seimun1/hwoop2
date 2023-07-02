@@ -1,7 +1,7 @@
 package ru.netology.javaqa.hwoop2.services;
 public class Radio {
-    public int currentVolume;
-    public int currentStation;
+    private int currentVolume;
+    private int currentStation;
 
     public int getCurrentVolume() {
         return currentVolume;
@@ -23,11 +23,17 @@ public class Radio {
     public void increaseVolume() {
         if (currentVolume < 100) {
             currentVolume++;
+        } else {
+            int volume = currentVolume;
+            setCurrentVolume(volume);
         }
     }
     public void decreaseVolume() {
         if (currentVolume > 0) {
-            currentVolume = currentVolume - 1;
+            currentVolume--;
+        } else {
+            int volume = currentVolume;
+            setCurrentVolume(volume);
         }
     }
 
